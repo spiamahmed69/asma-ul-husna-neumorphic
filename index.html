@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আসমাউল হুসনা — আল্লাহর ৯৯টি নাম</title>
+<meta name="description" content="আল্লাহর ৯৯টি সুন্দর নাম — আরবি, উচ্চারণ, বাংলা ও ইংরেজি অর্থ, মুখস্থের অগ্রগতি ও তাসবিহ কাউন্টার।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e9edf3; --card:#eef0f6; --ink:#2b3245; --muted:#7a8398;
+  --orange:#ff9f1c; --orange2:#ff8c00; --orange-soft:#ffb347;
+  --shadow:9px 9px 18px #cfd6e3, -9px -9px 18px #ffffff;
+  --shadow-sm:5px 5px 10px #cfd6e3, -5px -5px 10px #ffffff;
+  --inset:inset 5px 5px 10px #cfd6e3, inset -5px -5px 10px #ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Hind Siliguri","Inter",sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input{font-family:inherit}
+.app{max-width:480px;margin:0 auto;padding:18px 18px 110px;position:relative}
+/* ---------- top bar (reference screen 1) ---------- */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 18px}
+.userchip{display:flex;align-items:center;gap:12px}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--card);box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;color:var(--orange)}
+.avatar svg{width:26px;height:26px}
+.userchip .t1{font-weight:700;font-size:17px;line-height:1.2}
+.userchip .t2{font-size:13px;color:var(--muted)}
+.bell{width:48px;height:48px;border-radius:50%;background:var(--card);box-shadow:var(--shadow-sm);position:relative;display:flex;align-items:center;justify-content:center;color:var(--orange)}
+.bell svg{width:22px;height:22px}
+.badge{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;border-radius:10px;background:#2b3245;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 5px}
+/* ---------- hero ---------- */
+.hero{background:var(--card);border-radius:28px;box-shadow:var(--shadow);padding:26px 22px 24px;text-align:center;position:relative;overflow:hidden}
+.bubble{display:inline-block;background:linear-gradient(135deg,var(--orange-soft),var(--orange2));color:#fff;font-weight:700;font-size:24px;letter-spacing:1px;padding:12px 26px;border-radius:24px 24px 24px 4px;position:relative;box-shadow:0 8px 18px rgba(255,140,0,.35)}
+.bubble::after{content:"";position:absolute;left:26px;bottom:-9px;border:10px solid transparent;border-top-color:var(--orange2);border-left:none}
+.hero .big99{font-family:"Noto Naskh Arabic",serif;font-size:96px;line-height:1.1;color:var(--orange);font-weight:700;margin:14px 0 2px}
+.hero .big99 small{font-size:40px}
+.hero p{color:var(--muted);font-size:15px;margin-bottom:18px}
+.btn-orange{display:inline-block;background:linear-gradient(135deg,var(--orange-soft),var(--orange2));color:#fff;font-weight:700;font-size:17px;letter-spacing:1px;padding:14px 34px;border-radius:14px;box-shadow:0 10px 20px rgba(255,140,0,.35);transition:transform .15s}
+.btn-orange:active{transform:scale(.97)}
+/* ---------- progress bar (reference screen 3: Total bar) ---------- */
+.progress-card{margin-top:20px;background:linear-gradient(135deg,var(--orange-soft),var(--orange2));border-radius:18px;padding:16px 20px;color:#fff;box-shadow:0 10px 20px rgba(255,140,0,.3)}
+.progress-card .row{display:flex;justify-content:space-between;align-items:baseline;font-weight:700}
+.progress-card .row .lbl{font-size:16px}
+.progress-card .row .val{font-size:26px}
+.progress-track{height:10px;border-radius:6px;background:rgba(255,255,255,.35);margin-top:10px;overflow:hidden}
+.progress-fill{height:100%;width:0%;border-radius:6px;background:#fff;transition:width .4s}
+.progress-card .sub{font-size:13px;opacity:.92;margin-top:8px}
+/* ---------- today's name ---------- */
+.today{margin-top:20px;background:var(--card);border-radius:24px;box-shadow:var(--shadow);padding:20px;text-align:center}
+.today .kicker{font-size:13px;letter-spacing:2px;color:var(--orange);font-weight:700}
+.today .ar{font-family:"Noto Naskh Arabic",serif;font-size:44px;color:var(--ink);margin:6px 0 2px}
+.today .tr{font-weight:700;font-size:17px}
+.today .bn{color:var(--muted);font-size:15px;margin-bottom:14px}
+.btn-soft{background:var(--card);box-shadow:var(--shadow-sm);border-radius:12px;padding:11px 20px;font-weight:700;color:var(--orange);font-size:15px}
+.btn-soft.active{background:linear-gradient(135deg,var(--orange-soft),var(--orange2));color:#fff;box-shadow:0 8px 16px rgba(255,140,0,.3)}
+/* ---------- search + pills ---------- */
+.search{margin-top:20px;display:flex;align-items:center;gap:10px;background:var(--card);border-radius:16px;box-shadow:var(--inset);padding:13px 16px}
+.search svg{width:20px;height:20px;color:var(--orange);flex:none}
+.search input{border:none;outline:none;background:transparent;font-size:16px;width:100%;color:var(--ink)}
+.pills{display:flex;gap:10px;overflow-x:auto;padding:16px 2px 6px;scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pill{flex:none;padding:10px 18px;border-radius:20px;background:var(--card);box-shadow:var(--shadow-sm);font-weight:600;font-size:14px;color:var(--ink)}
+.pill.active{background:linear-gradient(135deg,var(--orange-soft),var(--orange2));color:#fff;box-shadow:0 8px 16px rgba(255,140,0,.3)}
+/* ---------- name grid (reference screen 2) ---------- */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+.card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:18px 14px 16px;text-align:center;position:relative;cursor:pointer;transition:transform .15s}
+.card:active{transform:scale(.98)}
+.card .num{position:absolute;top:10px;left:12px;font-size:12px;font-weight:700;color:var(--muted)}
+.card .fav{position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:50%;background:var(--card);box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;color:#b9c0cf}
+.card .fav.on{color:#ff5a5a}
+.card .fav svg{width:16px;height:16px}
+.card .ar{font-family:"Noto Naskh Arabic",serif;font-size:34px;line-height:1.5;color:var(--orange);margin-top:8px}
+.card .tr{font-weight:700;font-size:15px}
+.card .bn{font-size:13px;color:var(--muted);margin:2px 0 12px;min-height:20px}
+.card .buy{display:inline-block;background:linear-gradient(135deg,var(--orange-soft),var(--orange2));color:#fff;font-weight:700;font-size:13px;letter-spacing:1px;padding:9px 22px;border-radius:20px;box-shadow:0 6px 12px rgba(255,140,0,.3)}
+.card .buy.done{background:#e6e9f0;color:#8a93a8;box-shadow:var(--shadow-sm)}
+.card.learned{outline:2px solid rgba(255,159,28,.55)}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px 10px;background:var(--card);border-radius:22px;box-shadow:var(--shadow)}
+/* ---------- list view rows (reference screen 3) ---------- */
+.listrow{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:14px;margin-top:12px;cursor:pointer}
+.listrow .thumb{width:64px;height:64px;flex:none;border-radius:16px;background:linear-gradient(135deg,#fff3df,#ffe1ad);display:flex;align-items:center;justify-content:center;font-family:"Noto Naskh Arabic",serif;font-size:28px;color:var(--orange2)}
+.listrow .info{flex:1;min-width:0}
+.listrow .info .tr{font-weight:700;font-size:16px}
+.listrow .info .bn{font-size:13px;color:var(--muted)}
+.listrow .price{font-weight:700;font-size:15px;white-space:nowrap}
+/* ---------- bottom nav (reference) ---------- */
+.bottomnav{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;width:min(440px,calc(100% - 28px));background:var(--card);border-radius:26px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-around;padding:10px 12px;z-index:40}
+.navbtn{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:600;color:#9aa3b5;position:relative;padding:4px 8px}
+.navbtn svg{width:24px;height:24px}
+.navbtn.active{color:var(--orange)}
+.navbtn .nbadge{position:absolute;top:-2px;right:2px;min-width:17px;height:17px;border-radius:9px;background:var(--orange);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 4px}
+.navcenter{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--orange-soft),var(--orange2));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 20px rgba(255,140,0,.4);margin-top:-34px;flex:none}
+.navcenter svg{width:28px;height:28px}
+/* ---------- sheets / modals ---------- */
+.overlay{position:fixed;inset:0;background:rgba(43,50,69,.45);z-index:50;display:none;align-items:flex-end;justify-content:center}
+.overlay.open{display:flex}
+.sheet{background:var(--bg);border-radius:28px 28px 0 0;width:100%;max-width:480px;max-height:88vh;overflow-y:auto;padding:22px 22px 34px;box-shadow:0 -12px 30px rgba(0,0,0,.2)}
+.sheet .grab{width:48px;height:5px;border-radius:3px;background:#c9d0dd;margin:0 auto 16px}
+.sheet .ar{font-family:"Noto Naskh Arabic",serif;font-size:52px;text-align:center;color:var(--orange);line-height:1.4}
+.sheet .tr{text-align:center;font-weight:700;font-size:20px}
+.sheet .bn{text-align:center;color:var(--muted);font-size:16px;margin:4px 0 16px}
+.sheet .meaning{background:var(--card);border-radius:18px;box-shadow:var(--shadow-sm);padding:16px;margin-bottom:12px}
+.sheet .meaning .k{font-size:12px;letter-spacing:1px;color:var(--orange);font-weight:700}
+.sheet .meaning .v{font-size:16px;margin-top:4px}
+.sheet .rowbtns{display:flex;gap:10px;margin-top:16px}
+.sheet .rowbtns .btn-soft{flex:1}
+.sheet .prevnext{display:flex;justify-content:space-between;margin-top:16px}
+.sheet .prevnext button{font-weight:700;color:var(--orange);font-size:15px;padding:8px 6px}
+/* tasbih */
+.tasbih{text-align:center}
+.tasbih .ring{width:190px;height:190px;margin:10px auto;position:relative}
+.tasbih .ring svg{transform:rotate(-90deg)}
+.tasbih .count{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.tasbih .count b{font-size:52px;line-height:1}
+.tasbih .count span{font-size:13px;color:var(--muted)}
+.tasbih .tap{width:100%;padding:16px;border-radius:18px;background:linear-gradient(135deg,var(--orange-soft),var(--orange2));color:#fff;font-weight:700;font-size:18px;box-shadow:0 10px 20px rgba(255,140,0,.35)}
+.targets{display:flex;gap:10px;justify-content:center;margin:14px 0}
+.targets .pill{cursor:pointer}
+.linklike{color:var(--muted);text-decoration:underline;font-size:14px;margin-top:12px}
+/* footer */
+.foot{margin-top:26px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7;padding:0 8px}
+.foot b{color:var(--ink)}
+@media (max-width:360px){.hero .big99{font-size:80px}.grid{gap:12px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="userchip">
+      <div class="avatar" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg>
+      </div>
+      <div>
+        <div class="t1">আসসালামু আলাইকুম</div>
+        <div class="t2">আসমাউল হুসনা • ৯৯টি নাম</div>
+      </div>
+    </div>
+    <button class="bell" id="bellBtn" aria-label="প্রিয় নাম">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+      <span class="badge" id="bellBadge">০</span>
+    </button>
+  </header>
+
+  <section class="hero">
+    <div class="bubble">আসমাউল হুসনা</div>
+    <div class="big99">৯৯ <small>টি নাম</small></div>
+    <p>আল্লাহর সুন্দরতম নামগুলো শিখুন, মুখস্থ করুন<br>আর প্রতিদিন একটু একটু করে মনে রাখুন।</p>
+    <button class="btn-orange" id="startBtn">শুরু করুন</button>
+  </section>
+
+  <section class="progress-card" aria-label="মুখস্থের অগ্রগতি">
+    <div class="row"><span class="lbl">মোট শেখা:</span><span class="val"><span id="learnedCount">০</span> / ৯৯</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="sub" id="progressSub">আজ একটি নাম দিয়ে শুরু করুন।</div>
+  </section>
+
+  <section class="today" aria-label="আজকের নাম">
+    <div class="kicker">আজকের নাম</div>
+    <div class="ar" id="todayAr"></div>
+    <div class="tr" id="todayTr"></div>
+    <div class="bn" id="todayBn"></div>
+    <button class="btn-soft" id="todayBtn">বিস্তারিত দেখুন</button>
+  </section>
+
+  <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <input id="searchInput" type="search" placeholder="নাম খুঁজুন — যেমন: রহমান, Nur, রিজিক…" aria-label="নাম খুঁজুন">
+  </div>
+
+  <div class="pills" id="pills"></div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer class="foot">
+    <b>আসমাউল হুসনা</b> — “আল্লাহর রয়েছে সুন্দরতম নামসমূহ, সুতরাং তোমরা সেসব নামে তাঁকে ডাকো।” (সূরা আল-আ‘রাফ ৭:১৮০)<br>
+    ৯৯টি নামের এই সুপরিচিত তালিকাটি জামি‘ আত-তিরমিজির বর্ণনা অনুযায়ী সাজানো। হাদিসে সংখ্যাটি (সহিহ আল-বুখারি ২৭৩৬) প্রমাণিত; তালিকার ক্রম নিয়ে বর্ণনাভেদ আছে।<br>
+    অডিও নেই — নামগুলো আরবিতে পড়ে শিখুন।
+  </footer>
+</div>
+
+<nav class="bottomnav" aria-label="নেভিগেশন">
+  <button class="navbtn active" data-view="all" aria-label="হোম">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+    হোম
+  </button>
+  <button class="navbtn" data-view="fav" aria-label="প্রিয়">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A4.5 4.5 0 0 0 17.5 4c-1.7 0-3 .9-3.5 2-.5-1.1-1.8-2-3.5-2A4.5 4.5 0 0 0 6 8.5c0 2.3 1.5 4 3 5.5l5 5z"/></svg>
+    প্রিয়
+    <span class="nbadge" id="favBadge" style="display:none">০</span>
+  </button>
+  <button class="navcenter" id="tasbihBtn" aria-label="তাসবিহ">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="19" r="1.6"/><circle cx="5" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+  </button>
+  <button class="navbtn" data-view="learned" aria-label="শেখা">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4 12 14l-3-3"/></svg>
+    শেখা
+    <span class="nbadge" id="learnedBadge" style="display:none">০</span>
+  </button>
+  <button class="navbtn" data-view="list" aria-label="তালিকা">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+    তালিকা
+  </button>
+</nav>
+
+<div class="overlay" id="detailOverlay" role="dialog" aria-modal="true">
+  <div class="sheet">
+    <div class="grab"></div>
+    <div class="ar" id="dAr"></div>
+    <div class="tr" id="dTr"></div>
+    <div class="bn" id="dBn"></div>
+    <div class="meaning"><div class="k">বাংলা অর্থ</div><div class="v" id="dBnMeaning"></div></div>
+    <div class="meaning"><div class="k">ENGLISH MEANING</div><div class="v" id="dEnMeaning"></div></div>
+    <div class="meaning"><div class="k">সংক্ষেপে</div><div class="v" id="dEx"></div></div>
+    <div class="rowbtns">
+      <button class="btn-soft" id="dFavBtn">♡ প্রিয় করুন</button>
+      <button class="btn-soft" id="dLearnBtn">✓ শেখা হয়েছে</button>
+    </div>
+    <div class="rowbtns">
+      <button class="btn-soft" id="dTasbihBtn">তাসবিহ করুন</button>
+      <button class="btn-soft" id="dCloseBtn">বন্ধ করুন</button>
+    </div>
+    <div class="prevnext">
+      <button id="dPrev">← আগের নাম</button>
+      <span id="dPos" style="color:var(--muted);font-size:14px"></span>
+      <button id="dNext">পরের নাম →</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="tasbihOverlay" role="dialog" aria-modal="true">
+  <div class="sheet tasbih">
+    <div class="grab"></div>
+    <div class="kicker" style="font-size:13px;letter-spacing:2px;color:var(--orange);font-weight:700">তাসবিহ</div>
+    <div class="ar" style="font-family:'Noto Naskh Arabic',serif;font-size:40px;color:var(--orange)" id="tAr"></div>
+    <div class="tr" style="font-weight:700" id="tTr"></div>
+    <div class="ring">
+      <svg width="190" height="190" viewBox="0 0 190 190">
+        <circle cx="95" cy="95" r="82" fill="none" stroke="#e2e7f0" stroke-width="12"/>
+        <circle id="ringFg" cx="95" cy="95" r="82" fill="none" stroke="#ff9f1c" stroke-width="12" stroke-linecap="round" stroke-dasharray="515" stroke-dashoffset="515"/>
+      </svg>
+      <div class="count"><b id="tCount">০</b><span id="tTargetLabel">লক্ষ্য: ৩৩</span></div>
+    </div>
+    <div class="targets" id="targets">
+      <button class="pill active" data-target="33">৩৩</button>
+      <button class="pill" data-target="99">৯৯</button>
+      <button class="pill" data-target="100">১০০</button>
+    </div>
+    <button class="tap" id="tapBtn">তাসবিহ পড়ুন — ট্যাপ করুন</button>
+    <br>
+    <button class="linklike" id="tReset">আবার শূন্য করুন</button>
+    <br>
+    <button class="linklike" id="tClose">বন্ধ করুন</button>
+  </div>
+</div>
+
+<script>
+const NAMES=[
+{n:1,ar:"الرَّحْمَنُ",tr:"Ar-Rahman",bn:"পরম করুণাময়",en:"The Most Gracious",ex:"যাঁর দয়া সব সৃষ্টিকে ঘিরে আছে।",cat:"রহমত"},
+{n:2,ar:"الرَّحِيمُ",tr:"Ar-Rahim",bn:"পরম দয়ালু",en:"The Most Merciful",ex:"যিনি মুমিনদের প্রতি বিশেষভাবে দয়ালু।",cat:"রহমত"},
+{n:3,ar:"الْمَلِكُ",tr:"Al-Malik",bn:"সর্বময় রাজা",en:"The King",ex:"সমস্ত রাজত্বের একমাত্র অধিপতি।",cat:"শক্তি"},
+{n:4,ar:"الْقُدُّوسُ",tr:"Al-Quddus",bn:"অতি পবিত্র",en:"The Most Holy",ex:"সব দোষ-ত্রুটি থেকে সম্পূর্ণ পবিত্র।",cat:"শক্তি"},
+{n:5,ar:"السَّلَامُ",tr:"As-Salam",bn:"শান্তির উৎস",en:"The Source of Peace",ex:"যাঁর কাছ থেকে শান্তি ও নিরাপত্তা আসে।",cat:"সুরক্ষা"},
+{n:6,ar:"الْمُؤْمِنُ",tr:"Al-Mu'min",bn:"নিরাপত্তা দানকারী",en:"The Guardian of Faith",ex:"যিনি ঈমান ও নিরাপত্তা দান করেন।",cat:"সুরক্ষা"},
+{n:7,ar:"الْمُهَيْمِنُ",tr:"Al-Muhaymin",bn:"রক্ষক",en:"The Protector",ex:"যিনি সবকিছুর তত্ত্বাবধান ও রক্ষণাবেক্ষণ করেন।",cat:"সুরক্ষা"},
+{n:8,ar:"الْعَزِيزُ",tr:"Al-Aziz",bn:"মহাপরাক্রমশালী",en:"The Almighty",ex:"যাঁকে কেউ পরাজিত করতে পারে না।",cat:"শক্তি"},
+{n:9,ar:"الْجَبَّارُ",tr:"Al-Jabbar",bn:"মহাপ্রতাপশালী",en:"The Compeller",ex:"যাঁর ইচ্ছার সামনে সবকিছু নত হয়।",cat:"শক্তি"},
+{n:10,ar:"الْمُتَكَبِّرُ",tr:"Al-Mutakabbir",bn:"মহিমান্বিত",en:"The Supreme",ex:"মহিমা ও বড়ত্ব যাঁরই শোভা পায়।",cat:"শক্তি"},
+{n:11,ar:"الْخَالِقُ",tr:"Al-Khaliq",bn:"স্রষ্টা",en:"The Creator",ex:"যিনি সবকিছু সৃষ্টি করেছেন।",cat:"সৃষ্টি"},
+{n:12,ar:"الْبَارِئُ",tr:"Al-Bari",bn:"উদ্ভাবক",en:"The Originator",ex:"যিনি কোনো নমুনা ছাড়াই সৃষ্টি করেন।",cat:"সৃষ্টি"},
+{n:13,ar:"الْمُصَوِّرُ",tr:"Al-Musawwir",bn:"আকৃতি দানকারী",en:"The Fashioner",ex:"যিনি প্রত্যেককে যেমন ইচ্ছা আকৃতি দেন।",cat:"সৃষ্টি"},
+{n:14,ar:"الْغَفَّارُ",tr:"Al-Ghaffar",bn:"মহা ক্ষমাশীল",en:"The Great Forgiver",ex:"যিনি বারবার ক্ষমা করেন।",cat:"ক্ষমা"},
+{n:15,ar:"الْقَهَّارُ",tr:"Al-Qahhar",bn:"মহাপরাক্রমশালী",en:"The Irresistible",ex:"যাঁর ক্ষমতার সামনে সবকিছু পরাভূত।",cat:"শক্তি"},
+{n:16,ar:"الْوَهَّابُ",tr:"Al-Wahhab",bn:"মহাদাতা",en:"The Supreme Bestower",ex:"যিনি বিনিময় ছাড়াই অফুরন্ত দান করেন।",cat:"রহমত"},
+{n:17,ar:"الرَّزَّاقُ",tr:"Ar-Razzaq",bn:"রিজিকদাতা",en:"The Provider",ex:"যিনি সব সৃষ্টির রিজিকের ব্যবস্থা করেন।",cat:"রহমত"},
+{n:18,ar:"الْفَتَّاحُ",tr:"Al-Fattah",bn:"বিজয়দাতা",en:"The Opener",ex:"যিনি বন্ধ দরজা খুলে দেন ও ফয়সালা করেন।",cat:"শক্তি"},
+{n:19,ar:"الْعَلِيمُ",tr:"Al-Alim",bn:"সর্বজ্ঞ",en:"The All-Knowing",ex:"যিনি প্রকাশ্য ও গোপন সবকিছু জানেন।",cat:"জ্ঞান"},
+{n:20,ar:"الْقَابِضُ",tr:"Al-Qabid",bn:"সংকোচনকারী",en:"The Withholder",ex:"যিনি যাকে ইচ্ছা রিজিক সংকুচিত করেন।",cat:"শক্তি"},
+{n:21,ar:"الْبَاسِطُ",tr:"Al-Basit",bn:"প্রসারণকারী",en:"The Extender",ex:"যিনি যাকে ইচ্ছা রিজিক প্রশস্ত করেন।",cat:"শক্তি"},
+{n:22,ar:"الْخَافِضُ",tr:"Al-Khafid",bn:"অবনতকারী",en:"The Reducer",ex:"যিনি অহংকারীকে অবনত করেন।",cat:"শক্তি"},
+{n:23,ar:"الرَّافِعُ",tr:"Ar-Rafi",bn:"উন্নতকারী",en:"The Exalter",ex:"যিনি যাকে ইচ্ছা মর্যাদায় উন্নীত করেন।",cat:"শক্তি"},
+{n:24,ar:"الْمُعِزُّ",tr:"Al-Mu'izz",bn:"সম্মানদাতা",en:"The Honourer",ex:"সম্মান যাঁর হাতে, তিনি যাকে ইচ্ছা দেন।",cat:"শক্তি"},
+{n:25,ar:"الْمُذِلُّ",tr:"Al-Mudhill",bn:"অপমানকারী",en:"The Humiliator",ex:"যিনি অহংকারীকে লাঞ্ছিত করেন।",cat:"শক্তি"},
+{n:26,ar:"السَّمِيعُ",tr:"As-Sami",bn:"সর্বশ্রোতা",en:"The All-Hearing",ex:"যিনি সব কথা ও ফিসফিসানিও শোনেন।",cat:"জ্ঞান"},
+{n:27,ar:"الْبَصِيرُ",tr:"Al-Basir",bn:"সর্বদ্রষ্টা",en:"The All-Seeing",ex:"যিনি সবকিছু দেখেন, কিছুই তাঁর অগোচরে নয়।",cat:"জ্ঞান"},
+{n:28,ar:"الْحَكَمُ",tr:"Al-Hakam",bn:"ন্যায়বিচারক",en:"The Impartial Judge",ex:"যাঁর ফয়সালা সম্পূর্ণ ন্যায়ভিত্তিক।",cat:"ন্যায়"},
+{n:29,ar:"الْعَدْلُ",tr:"Al-Adl",bn:"পরম ন্যায়পরায়ণ",en:"The Utterly Just",ex:"যিনি কারো প্রতি বিন্দুমাত্র অবিচার করেন না।",cat:"ন্যায়"},
+{n:30,ar:"اللَّطِيفُ",tr:"Al-Latif",bn:"সূক্ষ্মদর্শী",en:"The Subtle One",ex:"যিনি সূক্ষ্মতম বিষয়ও জানেন ও কোমলভাবে দান করেন।",cat:"জ্ঞান"},
+{n:31,ar:"الْخَبِيرُ",tr:"Al-Khabir",bn:"সর্বজ্ঞাত",en:"The All-Aware",ex:"যিনি সবকিছুর গভীর খবর রাখেন।",cat:"জ্ঞান"},
+{n:32,ar:"الْحَلِيمُ",tr:"Al-Halim",bn:"অতি ধৈর্যশীল",en:"The Most Forbearing",ex:"যিনি পাপ দেখেও শাস্তিতে তাড়াহুড়া করেন না।",cat:"ক্ষমা"},
+{n:33,ar:"الْعَظِيمُ",tr:"Al-Azim",bn:"মহান",en:"The Magnificent",ex:"যাঁর মহত্ত্বের কোনো সীমা নেই।",cat:"শক্তি"},
+{n:34,ar:"الْغَفُورُ",tr:"Al-Ghafur",bn:"ক্ষমাশীল",en:"The Great Forgiver",ex:"যিনি তওবাকারীর গুনাহ ক্ষমা করেন।",cat:"ক্ষমা"},
+{n:35,ar:"الشَّكُورُ",tr:"Ash-Shakur",bn:"গুণগ্রাহী",en:"The Most Appreciative",ex:"যিনি অল্প আমলেরও বড় প্রতিদান দেন।",cat:"রহমত"},
+{n:36,ar:"الْعَلِيُّ",tr:"Al-Ali",bn:"সর্বোচ্চ",en:"The Most High",ex:"যিনি সবকিছুর ঊর্ধ্বে, সর্বোচ্চ মর্যাদার অধিকারী।",cat:"শক্তি"},
+{n:37,ar:"الْكَبِيرُ",tr:"Al-Kabir",bn:"মহানতম",en:"The Most Great",ex:"যিনি সবকিছুর চেয়ে বড়।",cat:"শক্তি"},
+{n:38,ar:"الْحَفِيظُ",tr:"Al-Hafiz",bn:"রক্ষাকর্তা",en:"The Preserver",ex:"যিনি সবকিছু হেফাজত করেন।",cat:"সুরক্ষা"},
+{n:39,ar:"الْمُقِيتُ",tr:"Al-Muqit",bn:"জীবিকাদাতা",en:"The Sustainer",ex:"যিনি প্রত্যেকের প্রয়োজন মেটানোর ক্ষমতা রাখেন।",cat:"রহমত"},
+{n:40,ar:"الْحَسِيبُ",tr:"Al-Hasib",bn:"হিসাব গ্রহণকারী",en:"The Reckoner",ex:"যাঁর কাছে প্রত্যেকের হিসাব রয়েছে।",cat:"ন্যায়"},
+{n:41,ar:"الْجَلِيلُ",tr:"Al-Jalil",bn:"মহিমাময়",en:"The Majestic One",ex:"মহিমা ও মর্যাদায় যিনি মহান।",cat:"শক্তি"},
+{n:42,ar:"الْكَرِيمُ",tr:"Al-Karim",bn:"মহানুভব",en:"The Most Generous",ex:"যাঁর দান কখনো শেষ হয় না।",cat:"রহমত"},
+{n:43,ar:"الرَّقِيبُ",tr:"Ar-Raqib",bn:"পর্যবেক্ষক",en:"The Watchful",ex:"যিনি প্রতিটি কাজের ওপর নজর রাখেন।",cat:"জ্ঞান"},
+{n:44,ar:"الْمُجِيبُ",tr:"Al-Mujib",bn:"প্রার্থনা কবুলকারী",en:"The Responsive One",ex:"যিনি ডাক শুনে সাড়া দেন।",cat:"রহমত"},
+{n:45,ar:"الْوَاسِعُ",tr:"Al-Wasi",bn:"সর্বব্যাপী",en:"The All-Encompassing",ex:"যাঁর জ্ঞান ও দয়া সবকিছুকে ঘিরে আছে।",cat:"শক্তি"},
+{n:46,ar:"الْحَكِيمُ",tr:"Al-Hakim",bn:"প্রজ্ঞাময়",en:"The All-Wise",ex:"যাঁর প্রতিটি কাজে গভীর প্রজ্ঞা রয়েছে।",cat:"জ্ঞান"},
+{n:47,ar:"الْوَدُودُ",tr:"Al-Wadud",bn:"পরম প্রেমময়",en:"The Most Loving",ex:"যিনি তাঁর বান্দাদের অত্যন্ত ভালোবাসেন।",cat:"রহমত"},
+{n:48,ar:"الْمَجِيدُ",tr:"Al-Majid",bn:"মহিমান্বিত",en:"The Most Glorious",ex:"মহিমা ও সম্মানে যিনি সর্বোচ্চ।",cat:"শক্তি"},
+{n:49,ar:"الْبَاعِثُ",tr:"Al-Ba'ith",bn:"পুনরুত্থানকারী",en:"The Resurrector",ex:"যিনি মৃত্যুর পর আবার জীবিত করবেন।",cat:"সৃষ্টি"},
+{n:50,ar:"الشَّهِيدُ",tr:"Ash-Shahid",bn:"সাক্ষী",en:"The All-Witnessing",ex:"যিনি সবকিছুর প্রত্যক্ষদর্শী সাক্ষী।",cat:"জ্ঞান"},
+{n:51,ar:"الْحَقُّ",tr:"Al-Haqq",bn:"চিরসত্য",en:"The Absolute Truth",ex:"যিনি চিরন্তন সত্য, যাঁর অস্তিত্ব অবশ্যম্ভাবী।",cat:"ন্যায়"},
+{n:52,ar:"الْوَكِيلُ",tr:"Al-Wakil",bn:"কর্মবিধায়ক",en:"The Trustee",ex:"যাঁর ওপর ভরসা করলে তিনিই যথেষ্ট।",cat:"সুরক্ষা"},
+{n:53,ar:"الْقَوِيُّ",tr:"Al-Qawiyy",bn:"মহাশক্তিশালী",en:"The All-Strong",ex:"যাঁর শক্তির কোনো সীমা নেই।",cat:"শক্তি"},
+{n:54,ar:"الْمَتِينُ",tr:"Al-Matin",bn:"সুদৃঢ়",en:"The Firm One",ex:"যাঁর শক্তি কখনো দুর্বল হয় না।",cat:"শক্তি"},
+{n:55,ar:"الْوَلِيُّ",tr:"Al-Waliyy",bn:"অভিভাবক",en:"The Protecting Associate",ex:"যিনি মুমিনদের অভিভাবক ও সাহায্যকারী।",cat:"সুরক্ষা"},
+{n:56,ar:"الْحَمِيدُ",tr:"Al-Hamid",bn:"প্রশংসিত",en:"The Praiseworthy",ex:"যিনি সর্বাবস্থায় প্রশংসার যোগ্য।",cat:"রহমত"},
+{n:57,ar:"الْمُحْصِي",tr:"Al-Muhsi",bn:"গণনাকারী",en:"The All-Enumerating",ex:"যিনি সবকিছু গুনে ও লিপিবদ্ধ করে রেখেছেন।",cat:"জ্ঞান"},
+{n:58,ar:"الْمُبْدِئُ",tr:"Al-Mubdi",bn:"প্রথম স্রষ্টা",en:"The Originator",ex:"যিনি প্রথমবার সৃষ্টি শুরু করেন।",cat:"সৃষ্টি"},
+{n:59,ar:"الْمُعِيدُ",tr:"Al-Mu'id",bn:"পুনঃসৃষ্টিকারী",en:"The Restorer",ex:"যিনি সৃষ্টিকে আবার ফিরিয়ে আনবেন।",cat:"সৃষ্টি"},
+{n:60,ar:"الْمُحْيِي",tr:"Al-Muhyi",bn:"জীবনদাতা",en:"The Giver of Life",ex:"যিনি প্রাণ দান করেন।",cat:"সৃষ্টি"},
+{n:61,ar:"الْمُمِيتُ",tr:"Al-Mumit",bn:"মৃত্যুদাতা",en:"The Bringer of Death",ex:"যাঁর হুকুমে মৃত্যু আসে।",cat:"শক্তি"},
+{n:62,ar:"الْحَيُّ",tr:"Al-Hayy",bn:"চিরঞ্জীব",en:"The Ever-Living",ex:"যিনি চিরজীবিত, মৃত্যু তাঁকে স্পর্শ করে না।",cat:"শক্তি"},
+{n:63,ar:"الْقَيُّومُ",tr:"Al-Qayyum",bn:"চিরস্থায়ী",en:"The Self-Subsisting",ex:"যিনি নিজে স্বয়ংসম্পূর্ণ ও সবকিছু ধারণকারী।",cat:"শক্তি"},
+{n:64,ar:"الْوَاجِدُ",tr:"Al-Wajid",bn:"সর্বসম্পদশালী",en:"The Perceiver",ex:"যাঁর কাছে কোনো কিছুর অভাব নেই।",cat:"শক্তি"},
+{n:65,ar:"الْمَاجِدُ",tr:"Al-Majid",bn:"মহিমান্বিত",en:"The Illustrious",ex:"মহিমা ও মর্যাদায় যিনি মহান।",cat:"শক্তি"},
+{n:66,ar:"الْوَاحِدُ",tr:"Al-Wahid",bn:"একক",en:"The One",ex:"যিনি এক ও অদ্বিতীয়।",cat:"জ্ঞান"},
+{n:67,ar:"الْأَحَدُ",tr:"Al-Ahad",bn:"অদ্বিতীয়",en:"The Unique",ex:"যিনি একক সত্তায় অনন্য, তাঁর কোনো শরিক নেই।",cat:"জ্ঞান"},
+{n:68,ar:"الصَّمَدُ",tr:"As-Samad",bn:"চিরন্তন",en:"The Eternal",ex:"যাঁর দিকে সবাই মুখাপেক্ষী, তিনি কারো মুখাপেক্ষী নন।",cat:"জ্ঞান"},
+{n:69,ar:"الْقَادِرُ",tr:"Al-Qadir",bn:"সর্বশক্তিমান",en:"The Capable",ex:"যিনি সবকিছু করতে সক্ষম।",cat:"শক্তি"},
+{n:70,ar:"الْمُقْتَدِرُ",tr:"Al-Muqtadir",bn:"মহাশক্তিধর",en:"The Powerful",ex:"যাঁর ক্ষমতা পূর্ণ ও পরিপূর্ণ।",cat:"শক্তি"},
+{n:71,ar:"الْمُقَدِّمُ",tr:"Al-Muqaddim",bn:"অগ্রবর্তীকারী",en:"The Expediter",ex:"যিনি যাকে ইচ্ছা অগ্রবর্তী করেন।",cat:"শক্তি"},
+{n:72,ar:"الْمُؤَخِّرُ",tr:"Al-Mu'akhkhir",bn:"পশ্চাৎকারী",en:"The Delayer",ex:"যিনি যাকে ইচ্ছা পিছিয়ে দেন।",cat:"শক্তি"},
+{n:73,ar:"الْأَوَّلُ",tr:"Al-Awwal",bn:"প্রথম",en:"The First",ex:"যিনি সবকিছুর আগে ছিলেন।",cat:"শক্তি"},
+{n:74,ar:"الْآخِرُ",tr:"Al-Akhir",bn:"শেষ",en:"The Last",ex:"যিনি সবকিছুর পরেও থাকবেন।",cat:"শক্তি"},
+{n:75,ar:"الظَّاهِرُ",tr:"Az-Zahir",bn:"প্রকাশ্য",en:"The Manifest",ex:"যাঁর নিদর্শন সবখানে প্রকাশ্য।",cat:"জ্ঞান"},
+{n:76,ar:"الْبَاطِنُ",tr:"Al-Batin",bn:"গোপন",en:"The Hidden",ex:"যিনি দৃষ্টির আড়ালে, তবু সবকিছু জানেন।",cat:"জ্ঞান"},
+{n:77,ar:"الْوَالِي",tr:"Al-Wali",bn:"শাসক",en:"The Governor",ex:"যিনি সবকিছুর শাসন ও পরিচালনা করেন।",cat:"সুরক্ষা"},
+{n:78,ar:"الْمُتَعَالِي",tr:"Al-Muta'ali",bn:"সর্বোচ্চ মহিমান্বিত",en:"The Most Exalted",ex:"যিনি সব ত্রুটি থেকে ঊর্ধ্বে ও মহিমান্বিত।",cat:"শক্তি"},
+{n:79,ar:"الْبَرُّ",tr:"Al-Barr",bn:"কল্যাণদাতা",en:"The Source of Goodness",ex:"যিনি তাঁর বান্দাদের প্রতি কল্যাণকারী।",cat:"রহমত"},
+{n:80,ar:"التَّوَّابُ",tr:"At-Tawwab",bn:"তওবা কবুলকারী",en:"The Acceptor of Repentance",ex:"যিনি তওবা কবুল করেন বারবার।",cat:"ক্ষমা"},
+{n:81,ar:"الْمُنْتَقِمُ",tr:"Al-Muntaqim",bn:"প্রতিশোধ গ্রহণকারী",en:"The Avenger",ex:"যিনি অপরাধীদের যথাযথ শাস্তি দেন।",cat:"ন্যায়"},
+{n:82,ar:"الْعَفُوُّ",tr:"Al-Afuww",bn:"মহা ক্ষমাকারী",en:"The Pardoner",ex:"যিনি গুনাহ সম্পূর্ণ মুছে দেন।",cat:"ক্ষমা"},
+{n:83,ar:"الرَّؤُوفُ",tr:"Ar-Ra'uf",bn:"অতি দয়ালু",en:"The Most Kind",ex:"যাঁর দয়া ও কোমলতা সীমাহীন।",cat:"রহমত"},
+{n:84,ar:"مَالِكُ الْمُلْكِ",tr:"Malik-ul-Mulk",bn:"রাজত্বের মালিক",en:"Master of the Kingdom",ex:"সমস্ত রাজত্ব যাঁর হাতে।",cat:"শক্তি"},
+{n:85,ar:"ذُو الْجَلَالِ وَالْإِكْرَامِ",tr:"Dhul-Jalali wal-Ikram",bn:"মহিমা ও সম্মানের অধিকারী",en:"Lord of Majesty and Honour",ex:"মহিমা ও সম্মান যাঁরই গুণ।",cat:"শক্তি"},
+{n:86,ar:"الْمُقْسِطُ",tr:"Al-Muqsit",bn:"ন্যায়পরায়ণ",en:"The Equitable",ex:"যিনি ন্যায়ের সাথে ফয়সালা করেন।",cat:"ন্যায়"},
+{n:87,ar:"الْجَامِعُ",tr:"Al-Jami",bn:"একত্রকারী",en:"The Gatherer",ex:"যিনি সবকিছু একত্র করবেন।",cat:"শক্তি"},
+{n:88,ar:"الْغَنِيُّ",tr:"Al-Ghaniyy",bn:"অভাবমুক্ত",en:"The Self-Sufficient",ex:"যিনি কারো মুখাপেক্ষী নন।",cat:"শক্তি"},
+{n:89,ar:"الْمُغْنِي",tr:"Al-Mughni",bn:"ধনীকারী",en:"The Enricher",ex:"যিনি যাকে ইচ্ছা অভাবমুক্ত করেন।",cat:"রহমত"},
+{n:90,ar:"الْمَانِعُ",tr:"Al-Mani",bn:"বাধাদানকারী",en:"The Preventer",ex:"যিনি যাকে ইচ্ছা বাধা দেন, তাঁর হিকমত অনুযায়ী।",cat:"শক্তি"},
+{n:91,ar:"الضَّارُّ",tr:"Ad-Darr",bn:"কষ্টদানকারী",en:"The Distresser",ex:"ক্ষতি ও কষ্ট যাঁর হুকুমেই আসে।",cat:"শক্তি"},
+{n:92,ar:"النَّافِعُ",tr:"An-Nafi",bn:"উপকারকারী",en:"The Benefactor",ex:"উপকার ও কল্যাণ যাঁর হাতেই।",cat:"রহমত"},
+{n:93,ar:"النُّورُ",tr:"An-Nur",bn:"জ্যোতি",en:"The Light",ex:"যিনি আসমান ও জমিনের আলো।",cat:"জ্ঞান"},
+{n:94,ar:"الْهَادِي",tr:"Al-Hadi",bn:"পথপ্রদর্শক",en:"The Guide",ex:"যিনি সঠিক পথ দেখান।",cat:"জ্ঞান"},
+{n:95,ar:"الْبَدِيعُ",tr:"Al-Badi",bn:"অতুলনীয় স্রষ্টা",en:"The Incomparable Originator",ex:"যিনি অভূতপূর্বভাবে সৃষ্টি করেন।",cat:"সৃষ্টি"},
+{n:96,ar:"الْبَاقِي",tr:"Al-Baqi",bn:"চিরস্থায়ী",en:"The Everlasting",ex:"সবকিছু ধ্বংস হলেও তিনি থাকবেন।",cat:"শক্তি"},
+{n:97,ar:"الْوَارِثُ",tr:"Al-Warith",bn:"উত্তরাধিকারী",en:"The Inheritor",ex:"সবকিছুর চূড়ান্ত মালিক তিনিই।",cat:"শক্তি"},
+{n:98,ar:"الرَّشِيدُ",tr:"Ar-Rashid",bn:"সঠিক পথের নির্দেশক",en:"The Guide to Right Path",ex:"যিনি সঠিক পথের দিকে পরিচালিত করেন।",cat:"জ্ঞান"},
+{n:99,ar:"الصَّبُورُ",tr:"As-Sabur",bn:"অতি ধৈর্যশীল",en:"The Most Patient",ex:"যিনি শাস্তিতে তাড়াহুড়া করেন না।",cat:"ক্ষমা"}
+];
+const bnNum=n=>String(n).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]);
+const $=s=>document.querySelector(s);
+const KEY="ah-neumorphic-v1";
+let state={fav:{},learned:{},tasbih:{}};
+try{const s=JSON.parse(localStorage.getItem(KEY)||"{}");state={fav:s.fav||{},learned:s.learned||{},tasbih:s.tasbih||{}};}catch(e){}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));}
+let view="all",cat="সব",query="",listMode=false;
+const CATS=["সব","রহমত","শক্তি","জ্ঞান","ক্ষমা","সৃষ্টি","সুরক্ষা","ন্যায়"];
+function filtered(){
+  let list=NAMES.slice();
+  if(view==="fav")list=list.filter(x=>state.fav[x.n]);
+  if(view==="learned")list=list.filter(x=>state.learned[x.n]);
+  if(cat!=="সব")list=list.filter(x=>x.cat===cat);
+  if(query){const q=query.toLowerCase();list=list.filter(x=>x.tr.toLowerCase().includes(q)||x.bn.includes(query)||x.en.toLowerCase().includes(q)||x.ar.includes(query));}
+  return list;
+}
+function renderPills(){
+  $("#pills").innerHTML=CATS.map(c=>`<button class="pill${c===cat?" active":""}" data-cat="${c}">${c}</button>`).join("");
+  document.querySelectorAll("#pills .pill").forEach(b=>b.onclick=()=>{cat=b.dataset.cat;renderPills();renderGrid();});
+}
+function heartSVG(on){return `<svg viewBox="0 0 24 24" fill="${on?"currentColor":"none"}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A4.5 4.5 0 0 0 17.5 4c-1.7 0-3 .9-3.5 2-.5-1.1-1.8-2-3.5-2A4.5 4.5 0 0 0 6 8.5c0 2.3 1.5 4 3 5.5l5 5z"/></svg>`;}
+function renderGrid(){
+  const list=filtered();
+  const grid=$("#grid");
+  if(!list.length){grid.innerHTML=`<div class="empty">কোনো নাম পাওয়া যায়নি।<br>অন্য কিছু লিখে খুঁজে দেখুন।</div>`;return;}
+  if(listMode){
+    grid.className="";grid.style.display="block";
+    grid.innerHTML=list.map(x=>`<div class="listrow" data-n="${x.n}">
+      <div class="thumb">${x.ar}</div>
+      <div class="info"><div class="tr">${x.n}. ${x.tr}</div><div class="bn">${x.bn} • ${x.en}</div></div>
+      <div class="price">${state.learned[x.n]?"✓ শেখা":""}</div>
+    </div>`).join("");
+  }else{
+    grid.className="grid";grid.style.display="";
+    grid.innerHTML=list.map(x=>`<div class="card${state.learned[x.n]?" learned":""}" data-n="${x.n}">
+      <span class="num">${bnNum(x.n)}</span>
+      <button class="fav${state.fav[x.n]?" on":""}" data-fav="${x.n}" aria-label="প্রিয়">${heartSVG(!!state.fav[x.n])}</button>
+      <div class="ar">${x.ar}</div>
+      <div class="tr">${x.tr}</div>
+      <div class="bn">${x.bn}</div>
+      <span class="buy${state.learned[x.n]?" done":""}">${state.learned[x.n]?"✓ শেখা হয়েছে":"শিখেছি"}</span>
+    </div>`).join("");
+  }
+  grid.querySelectorAll("[data-n]").forEach(el=>el.addEventListener("click",e=>{
+    if(e.target.closest("[data-fav]"))return;
+    openDetail(+el.dataset.n);
+  }));
+  grid.querySelectorAll("[data-fav]").forEach(b=>b.addEventListener("click",e=>{
+    e.stopPropagation();
+    const n=+b.dataset.fav;
+    if(state.fav[n])delete state.fav[n];else state.fav[n]=1;
+    save();updateCounts();renderGrid();
+  }));
+}
+function updateCounts(){
+  const lc=Object.keys(state.learned).length, fc=Object.keys(state.fav).length;
+  $("#learnedCount").textContent=bnNum(lc);
+  $("#progressFill").style.width=(lc/99*100)+"%";
+  $("#progressSub").textContent=lc===0?"আজ একটি নাম দিয়ে শুরু করুন।":lc===99?"আলহামদুলিল্লাহ! ৯৯টি নামই শেখা হয়েছে।":"আর "+bnNum(99-lc)+"টি নাম বাকি আছে — এগিয়ে যান।";
+  $("#bellBadge").textContent=bnNum(fc);
+  const fb=$("#favBadge");fb.style.display=fc?"flex":"none";fb.textContent=bnNum(fc);
+  const lb=$("#learnedBadge");lb.style.display=lc?"flex":"none";lb.textContent=bnNum(lc);
+}
+function setView(v){
+  view=v;listMode=(v==="list");
+  document.querySelectorAll(".navbtn").forEach(b=>b.classList.toggle("active",b.dataset.view===v||(v==="list"&&b.dataset.view==="list")));
+  renderGrid();
+  if(v!=="all")document.querySelector(".grid, #grid").scrollIntoView({behavior:"smooth",block:"start"});
+}
+/* today's name: day-of-year rotation */
+const today=NAMES[(Math.floor(Date.now()/86400000))%99];
+$("#todayAr").textContent=today.ar;
+$("#todayTr").textContent=today.n+". "+today.tr;
+$("#todayBn").textContent=today.bn+" • "+today.en;
+$("#todayBtn").onclick=()=>openDetail(today.n);
+$("#startBtn").onclick=()=>{document.querySelector(".search").scrollIntoView({behavior:"smooth"});$("#searchInput").focus();};
+$("#searchInput").addEventListener("input",e=>{query=e.target.value.trim();renderGrid();});
+document.querySelectorAll(".navbtn").forEach(b=>b.onclick=()=>setView(b.dataset.view));
+$("#bellBtn").onclick=()=>setView("fav");
+/* detail sheet */
+let current=1;
+function openDetail(n){
+  current=n;const x=NAMES[n-1];
+  $("#dAr").textContent=x.ar;
+  $("#dTr").textContent=x.n+". "+x.tr;
+  $("#dBn").textContent=x.bn+" • "+x.cat;
+  $("#dBnMeaning").textContent=x.bn;
+  $("#dEnMeaning").textContent=x.en;
+  $("#dEx").textContent=x.ex;
+  $("#dPos").textContent=bnNum(n)+" / ৯৯";
+  syncDetailBtns();
+  $("#detailOverlay").classList.add("open");
+}
+function syncDetailBtns(){
+  const f=$("#dFavBtn"),l=$("#dLearnBtn");
+  f.textContent=state.fav[current]?"♥ প্রিয় করা হয়েছে":"♡ প্রিয় করুন";
+  f.classList.toggle("active",!!state.fav[current]);
+  l.textContent=state.learned[current]?"✓ শেখা হয়েছে":"✓ শেখা হয়েছে";
+  l.classList.toggle("active",!!state.learned[current]);
+}
+$("#dFavBtn").onclick=()=>{if(state.fav[current])delete state.fav[current];else state.fav[current]=1;save();updateCounts();renderGrid();syncDetailBtns();};
+$("#dLearnBtn").onclick=()=>{if(state.learned[current])delete state.learned[current];else state.learned[current]=1;save();updateCounts();renderGrid();syncDetailBtns();};
+$("#dCloseBtn").onclick=()=>$("#detailOverlay").classList.remove("open");
+$("#dPrev").onclick=()=>openDetail(current===1?99:current-1);
+$("#dNext").onclick=()=>openDetail(current===99?1:current+1);
+$("#detailOverlay").addEventListener("click",e=>{if(e.target.id==="detailOverlay")e.target.classList.remove("open");});
+$("#dTasbihBtn").onclick=()=>{$("#detailOverlay").classList.remove("open");openTasbih(current);};
+/* tasbih */
+let tasbihName=1,tasbihTarget=33;
+function openTasbih(n){
+  tasbihName=n;const x=NAMES[n-1];
+  $("#tAr").textContent=x.ar;$("#tTr").textContent=x.tr+" • "+x.bn;
+  updateTasbih();
+  $("#tasbihOverlay").classList.add("open");
+}
+function tasbihCount(){return state.tasbih[tasbihName]||0;}
+function updateTasbih(){
+  const c=tasbihCount();
+  $("#tCount").textContent=bnNum(c);
+  $("#tTargetLabel").textContent="লক্ষ্য: "+bnNum(tasbihTarget);
+  const pct=Math.min(c/tasbihTarget,1);
+  $("#ringFg").style.strokeDashoffset=515*(1-pct);
+  document.querySelectorAll("#targets .pill").forEach(p=>p.classList.toggle("active",+p.dataset.target===tasbihTarget));
+}
+$("#tapBtn").onclick=()=>{state.tasbih[tasbihName]=tasbihCount()+1;save();updateTasbih();};
+$("#tReset").onclick=()=>{state.tasbih[tasbihName]=0;save();updateTasbih();};
+$("#tClose").onclick=()=>$("#tasbihOverlay").classList.remove("open");
+document.querySelectorAll("#targets .pill").forEach(p=>p.onclick=()=>{tasbihTarget=+p.dataset.target;updateTasbih();});
+$("#tasbihOverlay").addEventListener("click",e=>{if(e.target.id==="tasbihOverlay")e.target.classList.remove("open");});
+$("#tasbihBtn").onclick=()=>openTasbih(today.n);
+renderPills();renderGrid();updateCounts();
+</script>
+</body>
+</html>
